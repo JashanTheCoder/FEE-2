@@ -42,7 +42,7 @@ textarea {
 
 input[type='file'] {
 	padding: 5px;
-	border: none;
+	border: 5px solid red;
 }
 
 input[type='submit'] {
