@@ -8,9 +8,9 @@ const picInput = document.getElementById('pic-input');
 const updateButton = document.getElementById('update-button');
 
 updateButton.addEventListener('click', function () {
-	profileName.innerText = `Name: ${nameInput.value}`;
+	profileName.innerText = nameInput.value;
 
-	profileBio.innerText = `Bio: ${bioInput.value}`;
+	profileBio.innerText = bioInput.value;
 
 	profilePic.src = picInput.value;
 });
