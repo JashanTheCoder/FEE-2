@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.head {
+				display: flex;
+				justify-content: center;
+			}
+			.box {
+				border: 2px solid black;
+				padding: 20px;
+				margin: 10px;
+				display: flex;
+				justify-content: space-around;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<div class="box">box1</div>
+			<div class="box">box2</div>
+			<div class="box">box3</div>
+			<div class="box">box4</div>
+		</div>
+
+		<script>
+			let box = document.querySelector('.head').children;
+
+			function getColor() {
+				let val1 = Math.ceil(Math.random() * 255);
+				let val2 = Math.ceil(Math.random() * 255);
+				let val3 = Math.ceil(Math.random() * 255);
+				return `rgb(${val1}, ${val2}, ${val3})`;
+			}
+
+			function changeColors() {
+				Array.from(box).forEach((boxElement) => {
+					boxElement.style.backgroundColor = getColor();
+				});
+			}
+
+			// Call the function every 1 second (1000 milliseconds)
+			setInterval(changeColors, 1000);
+		</script>
+	</body>
+</html>

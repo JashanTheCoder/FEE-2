@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width= , initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.card {
+				display: flex;
+				border: 2px solid black;
+				width: 900px;
+				justify-content: center;
+				align-items: center;
+				padding-top: 3px;
+				margin: 9px;
+			}
+			.text h1,
+			p {
+				padding-top: 2px 0;
+				margin-left: 3px;
+			}
+			.image {
+				position: relative;
+			}
+			.capsule {
+				position: absolute;
+				bottom: 4px;
+				z-index: 10;
+				background-color: rgb(26, 24, 24);
+				color: white;
+				opacity: 0.9;
+				padding: 3px;
+				border-radius: 8px;
+				right: 2px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="card">
+				<div class="image">
+					<img
+						src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/free-youtube-thumbnail-maker-online-design-template-b0d0e1050e510fc2784b90d522d5bbe5_screen.jpg?ts=1662402001"
+						alt=""
+						width="200px"
+					/>
+					<div class="capsule">21:00</div>
+				</div>
+
+				<div class="text">
+					<h1>Introduction to javascript | Chakmi Classes #2</h1>
+					<p>JashanSinghSahni . 444k views . 5 months ago</p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function createCard(title, cName, views, monthsOld, duration, thumbnail) {
+				let viewStr;
+				if (views < 1000) {
+					viewStr = views;
+				} else if (views > 1000000) {
+					viewStr = views / 1000000 + 'M';
+				} else {
+					viewStr = views / 1000 + 'K';
+				}
+				let html = `
+			             <div class="card">
+				<div class="image">
+					<img
+						src="${thumbnail}"
+						alt=""
+						width="200px"
+					/>
+			                 <div class="capsule">${duration}</div>
+				</div>
+				<div class="text">
+					<h1>${title}</h1>
+					<p>${cName} . ${viewStr} views . ${monthsOld} months ago</p>
+				</div>
+			</div>`;
+
+				//document.querySelector('.container').innerHTML = html; // do this if want to change the original html
+
+				document.querySelector('.container').innerHTML =
+					document.querySelector('.container').innerHTML + html;
+			}
+
+			createCard(
+				'Introduction to backend | Jashan Sahni Course #1',
+				'JashanSinghSahni',
+				'5600',
+				'7',
+				'31:23',
+				'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/free-youtube-thumbnail-maker-online-design-template-b0d0e1050e510fc2784b90d522d5bbe5_screen.jpg?ts=1662402001'
+			);
+			createCard(
+				'Introduction to NodeJs | Jashan Sahni Course #2',
+				'JashanSinghSahni',
+				'4500',
+				'5',
+				'31:29',
+				'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/free-youtube-thumbnail-maker-online-design-template-b0d0e1050e510fc2784b90d522d5bbe5_screen.jpg?ts=1662402001'
+			);
+		</script>
+	</body>
+</html>
